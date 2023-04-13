@@ -15,7 +15,7 @@ const Home = () => {
   return (
 
    <>
-    <h1> Bem Vindo! </h1>
+    <h1> Bem Vindo! Desejo um excelente dia </h1>
     <p>{String(authenticated)}</p>
     <button onClick={handleLogout}>Sair</button>
    </>
