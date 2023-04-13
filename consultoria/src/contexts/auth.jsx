@@ -2,6 +2,7 @@ import React, {useEffect, useState, createContext} from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import {api, createSession} from '../services/api'
 
 
 export const AuthContext = createContext();
@@ -24,9 +25,13 @@ export const AuthProvider = ({children}) =>{
       setLoading(false)
   }, [])
 
-  const login = (email, password)=> {
+  const login = async(email, password)=> {
     //user != null  ----  user == null (!!user) 
     //authenticated = true ----- authenticated = false
+
+      //conexão com o Banco de dados.  Aqui foi necessário infomar que o login é por email
+    const response = await createSession.post("/login", {"login":email,password});
+    console.log(response.data)
     
     const loggedUser ={
       id: "1",
@@ -36,12 +41,11 @@ export const AuthProvider = ({children}) =>{
     // o localStorage só guarda tipos nativos como strings, int. o JSON.stringify converte para string
 
     localStorage.setItem('user', JSON.stringify(loggedUser));
+
+    setUser(loggedUser)
+    navigate("/")
     
-    if(password === "123"){
-      console.log("login auth", email, password);
-      setUser(loggedUser)
-      navigate("/")
-    } 
+   
     
   }
 

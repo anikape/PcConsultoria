@@ -13,7 +13,7 @@ const LoginPage = () =>{
   const handleSubmit = (e) =>{
     e.preventDefault();
       console.log("submit", {email, password})
-      login(email, password);  //integração com o context e api
+      login(email, password);  //integração com o context e api de requisição com o backend (Banco de dados)
   }
   return(
     <section>
