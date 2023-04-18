@@ -1,9 +1,8 @@
 import React, {useState, useContext} from "react";
 import { AuthContext } from "../../contexts/auth";
-import "./login.sass"
+import "./login.css";
 import { FaHome, FaUserAlt, FaEyeSlash} from "react-icons/fa"
-
-
+import Footer from "../../components/Footer/Footer";
 
 
 const LoginPage = () =>{
@@ -19,24 +18,42 @@ const LoginPage = () =>{
       login(email, password);  //integração com o context e api de requisição com o backend (Banco de dados)
   }
   return(
+    <>
     <section className="loginPage">
       
-      <div className="menu">
+      <div id="menu">
         <div className="menuImage">
-          <img src="../../../public/assets/logo_pc_consultoria 2.svg" alt="Logo PC Consultoria" />
-        </div>
+          <img src="../../../public/assets/logo_pc_consultoria.svg" alt="Logo PC Consultoria" />
+        </div>         
         <div className="menuHome">
-
-          <div id="menuIcon">
-        
+          <div id="menuIcon">        
             <FaHome className="icon" />
-
-          </div>
-        
+          </div>        
         </div>
+      </div>
 
+      <div id="menu2">
+      <div className="menuImage">
+          <img src="../../../public/assets/logo_pc_consultoria.svg" alt="Logo PC Consultoria" />
+        </div> 
+        <div className="menuHome">
+          <div id="menuIcon">        
+            <FaHome className="icon" />
+          </div>  
+          <div className="list">
+            <ul>
+             <li><a href="#">Institucional</a></li>
+             <li><a href="#">Atuação</a></li>
+             <li><a href="#">Vantagens</a></li>
+             <li><a href="#">Contato</a></li>
+
+            </ul>
+          </div>      
+        </div>
+       
       </div>
      
+      
    
     
     <div id="login">
@@ -85,8 +102,8 @@ const LoginPage = () =>{
 
     </div>
     </section>
-    
-    
+    <Footer />
+    </>
     
     
     
