@@ -32,6 +32,7 @@ export const AuthProvider = ({children}) =>{
       //conexão com o Banco de dados.  Aqui foi necessário infomar que o login é por email
     // const response = await createSession.post("/login", {"login":email,password});
     // console.log(response.data)
+   
     
     const loggedUser ={
       id: "1",
@@ -46,7 +47,10 @@ export const AuthProvider = ({children}) =>{
       setUser(loggedUser)
       navigate("/")
     }
-    
+
+    //Quando entrar o bd descomentar as linhas abaixo
+    // setUser(loggedUser)
+    //   navigate("/")
     
    
     

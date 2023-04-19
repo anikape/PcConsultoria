@@ -1,8 +1,10 @@
 import React, {useState, useContext} from "react";
 import { AuthContext } from "../../contexts/auth";
-import "./login.css";
+// import "./login.css";
+import "./login.scss"
 import { FaHome, FaUserAlt, FaEyeSlash} from "react-icons/fa"
-import Footer from "../../components/Footer/Footer";
+
+
 
 
 const LoginPage = () =>{
@@ -98,11 +100,10 @@ const LoginPage = () =>{
             </div>
 
         </form>
+      </div>
       
-
-    </div>
     </section>
-    <Footer />
+   
     </>
     
     
