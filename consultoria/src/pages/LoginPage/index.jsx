@@ -25,7 +25,7 @@ const LoginPage = () =>{
       
       <div id="menu">
         <div className="menuImage">
-          <img src="../../../public/assets/logo_pc_consultoria.svg" alt="Logo PC Consultoria" />
+          <img src="../assets/logo_pc_consultoria.svg" alt="Logo PC Consultoria" />
         </div>         
         <div className="menuHome">
           <div id="menuIcon">        
@@ -36,7 +36,7 @@ const LoginPage = () =>{
 
       <div id="menu2">
       <div className="menuImage">
-          <img src="../../../public/assets/logo_pc_consultoria.svg" alt="Logo PC Consultoria" />
+          <img src="../assets/logo_pc_consultoria.svg" alt="Logo PC Consultoria" />
         </div> 
         <div className="menuHome">
           <div id="menuIcon">        
@@ -61,7 +61,7 @@ const LoginPage = () =>{
     <div id="login">
 
     <div>
-        <img className="logo2" src="../../../public/assets/logo_pc_consultoria 2@2x.png" alt="logo PC Consultoria" />
+        <img className="logo2" src="../assets/logo_pc_consultoria 2@2x.png" alt="logo PC Consultoria" />
       </div>
     
         

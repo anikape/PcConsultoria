@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+.clientContainer{
+  background-image: url('../assets/backgroundMaior.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:cover;
+  display: flex;
+  flex-direction: column;
+  max-width: 4000px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  align-items: center;
+  gap: 100px
+ 
+}

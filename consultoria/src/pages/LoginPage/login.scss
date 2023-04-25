@@ -6,7 +6,7 @@
 }
   
 .loginPage {
-  background-image: url('../../../public/assets/imagemDeFundo.svg');
+  background-image: url('../assets/imagemDeFundo.svg');
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 647px;
@@ -175,11 +175,12 @@
 
 @media screen and (min-width: 661px){
   .loginPage{
-    background-image: url('../../../public/assets/index-slider.svg');
+    background-image: url('../assets/backgroundMaior.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center center;
+    background-size:cover;
     max-width: 4000px;
-    max-height:1350px;
+    height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
     

@@ -2,7 +2,7 @@ import React from "react";
 import {Formik, Form, Field} from "formik"
 import * as Yup from 'yup';
 
-import './FormRegister.sass'
+// import './FormRegister.sass'
 
 const FormRegister = () => {
 

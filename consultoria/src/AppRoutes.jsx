@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import Home from "./pages/Home/Home";
 import {AuthProvider, AuthContext} from "./contexts/auth"
 import LogonPage from "./pages/LogonPage";
+import Cliente from "./pages/Client/Cliente";
 
 
 const AppRoutes  = () =>{
@@ -30,6 +31,7 @@ const AppRoutes  = () =>{
       <Routes>
         <Route exact path="/login" element={<LoginPage />} />
         <Route exact path="/logon" element={<LogonPage />} />
+        <Route exact path="/client" element={<Cliente />} />
 
         <Route exact path="/" element={   <Private><Home /></Private>
           } />
