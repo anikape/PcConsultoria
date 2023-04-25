@@ -35,9 +35,11 @@ const FormClient = () => {
       }
 
     return(
-    
+        
 
         <section className="formClient">
+
+            <img className="logo" src="../assets/logo_pc_consultoria.svg" alt="logo" />
             
             <Formik 
                 initialValues={initialValues}
@@ -48,8 +50,8 @@ const FormClient = () => {
                 <Form id="formContainer">
 
                     <div className="formContet">
-                        <label id="formLabel" htmlFor="name">Nome/Razão Social*</label>
-                        <Field className="formField" id="name" name="name" placeholder="Nome" />
+                        <label id="formLabel" htmlFor="name">Nome/Razão Social<span>*</span></label>
+                        <Field className="formField" id="name" name="name" placeholder="" />
                         {
                             errors.name && touched.name 
                             ? (<div className="error">{errors.name}</div>) 
@@ -57,10 +59,10 @@ const FormClient = () => {
                         }
                     </div>
 
-                    <div>
+                    <div className="formDisplay">
                     <div className="formContet">
-                        <label id="formLabel" htmlFor="cnpj">CPF/CNPJ*</label>
-                        <Field className="formField" id="cnpj" name="cnpj" placeholder="CNPJ" />
+                        <label id="formLabel" htmlFor="cnpj">CPF/CNPJ<span>*</span></label>
+                        <Field className="formField" id="cnpj" name="cnpj" placeholder="" />
                         {
                             errors.cnpj && touched.cnpj 
                             ? (<div className="error">{errors.cnpj}</div>) 
@@ -69,12 +71,12 @@ const FormClient = () => {
                     </div>
 
                     <div className="formContet">
-                        <label id="formLabel" htmlFor="email">Email</label>
+                        <label id="formLabel" htmlFor="email">Email<span>*</span></label>
                         <Field
                             className="formField"
                             id="email"
                             name="email"
-                            placeholder="email@email.com"
+                            placeholder=""
                             type="email"
                         />
                         {
@@ -87,14 +89,14 @@ const FormClient = () => {
                     
                     
                    
-                   <div>
+                   <div className="formDisplay">
                    <div className="formContet">
-                        <label id="formLabel" htmlFor="mobile">Telefone celular</label>
+                        <label id="formLabel" htmlFor="mobile">Telefone celular <span>*</span></label>
                         <Field
                             className="formField"
                             id="mobile"
                             name="mobile"
-                            placeholder="xx - 999999999"
+                            placeholder=""
                             type="phone"
                         />
                         {/* {
@@ -104,12 +106,12 @@ const FormClient = () => {
                         } */}
                     </div>
                     <div className="formContet">
-                        <label id="formLabel" htmlFor="phone">Telefone fixo</label>
+                        <label id="formLabel" htmlFor="phone">Telefone fixo <span>*</span></label>
                         <Field
                         className="formField"
                             id="phone"
                             name="phone"
-                            placeholder="xx - 999999999"
+                            placeholder=""
                             type="phone"
                         />
                         {/* {
@@ -121,7 +123,7 @@ const FormClient = () => {
 
                    </div>
                    <div className="formContet">
-                        <label id="formLabel" htmlFor="mobile">Rua/Logradouro*</label>
+                        <label id="formLabel" htmlFor="mobile">Rua/Logradouro<span>*</span></label>
                         <Field
                             className="formField"
                             id="logragrouro"
@@ -136,10 +138,10 @@ const FormClient = () => {
                         } */}
                     </div>
 
-                    <div>
+                    <div className="formDisplay">
                     
                     <div className="formContet">
-                        <label id="formLabel" htmlFor="Cep">CEP*</label>
+                        <label id="formLabel" htmlFor="Cep">CEP<span>*</span></label>
                         <Field className="formField"
                             id="cep"
                             name="cep"
@@ -154,7 +156,7 @@ const FormClient = () => {
                     </div>
                     
                     <div className="formContet">
-                        <label id="formLabel" htmlFor="mobile">Complemento</label>
+                        <label id="formLabel" htmlFor="complemento">Complemento</label>
                         <Field className="formField"
                             id="complemento"
                             name="complemento"
@@ -170,12 +172,12 @@ const FormClient = () => {
                         
                     </div>
 
-                    <div>
+                    <div className="formDisplay2">
                     <div className="formContet">
-                        <label id="formLabel" htmlFor="cidade">Cidade*</label>
+                        <label id="formLabel" htmlFor="cidade">Cidade<span>*</span></label>
                         <Field className="formField"
-                            id="complemento"
-                            name="complemento"
+                            id="cidade"
+                            name="cidade"
                             placeholder=""
                             type="text"
                         />
@@ -186,9 +188,9 @@ const FormClient = () => {
                         } */}
                     </div>
 
-                    <div className="formContet">
-                        <label id="formLabel" htmlFor="uf">UF*</label>
-                        <Field className="formField"
+                    <div className="formContet uf">
+                        <label id="formLabel" htmlFor="uf">UF<span>*</span></label>
+                        <Field className="formField1"
                             id="uf"
                             name="uf"
                             placeholder=""
@@ -200,10 +202,10 @@ const FormClient = () => {
                             : null
                         } */}
                     </div>
-
+                    
                     <div className="formContet">
-                        <label id="formLabel" htmlFor="pais">País*</label>
-                        <Field className="formField"
+                        <label id="formLabel" htmlFor="pais">País<span>*</span></label>
+                        <Field className="formField2"
                             id="pais"
                             name="pais"
                             placeholder=""
@@ -215,12 +217,15 @@ const FormClient = () => {
                             : null
                         } */}
                     </div>
+                  
 
 
                     </div>
-
-
+                   
+                    <div className="buttonSubimit">
                     <button id="cadastrar" type="submit">Cadastrar</button>
+                    </div>
+                    
                 </Form>
                 )}
             </Formik>
