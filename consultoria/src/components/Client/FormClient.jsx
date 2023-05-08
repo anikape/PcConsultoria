@@ -24,7 +24,7 @@ const FormClient = () => {
         cnpj: Yup.string()
             .min(2, 'Muito Curto!')
             .max(50, 'Muito Longo!')
-            .required('Required'),
+            .required('Por Favor, informe o CPF'),
         email: Yup.string().email('Email inválido').required('Required'),
         mobile: Yup.string().matches(/^[9-9]\d{9}$/, {message: "Por favos, insira um número válido", excludeEmptyString: false})
     });
@@ -37,9 +37,9 @@ const FormClient = () => {
     return(
         
 
-        <section className="formClient">
+        <section className="FormClient">
 
-            <img className="logo" src="../assets/logo_pc_consultoria.svg" alt="logo" />
+            <img className="Logo" src="../assets/logo_pc_consultoria.svg" alt="logo" />
             
             <Formik 
                 initialValues={initialValues}
@@ -47,11 +47,11 @@ const FormClient = () => {
                 onSubmit= {(values) => handleSubmit(values)}
             >
                 {({ errors, touched }) => (
-                <Form id="formContainer">
+                <Form id="FormContainer">
 
-                    <div className="formContet">
-                        <label id="formLabel" htmlFor="name">Nome/Razão Social<span>*</span></label>
-                        <Field className="formField" id="name" name="name" placeholder="" />
+                    <div className="FormContent">
+                        <label id="FormLabel" htmlFor="name">Nome/Razão Social<span>*</span></label>
+                        <Field className="FormField FormName" id="name" name="name" placeholder="" />
                         {
                             errors.name && touched.name 
                             ? (<div className="error">{errors.name}</div>) 
@@ -59,41 +59,42 @@ const FormClient = () => {
                         }
                     </div>
 
-                    <div className="formDisplay">
-                    <div className="formContet">
-                        <label id="formLabel" htmlFor="cnpj">CPF/CNPJ<span>*</span></label>
-                        <Field className="formField" id="cnpj" name="cnpj" placeholder="" />
-                        {
-                            errors.cnpj && touched.cnpj 
-                            ? (<div className="error">{errors.cnpj}</div>) 
-                            : null
-                        }
-                    </div>
+                    <div className="FormDisplay">
+                        
+                            <div className="FormContent">
+                                <label id="FormLabel" htmlFor="cnpj">CPF/CNPJ<span>*</span></label>
+                                <Field className="FormField" id="cnpj" name="cnpj" placeholder="" />
+                                {
+                                    errors.cnpj && touched.cnpj 
+                                    ? (<div className="error">{errors.cnpj}</div>) 
+                                    : null
+                                }
+                            </div>
 
-                    <div className="formContet">
-                        <label id="formLabel" htmlFor="email">Email<span>*</span></label>
-                        <Field
-                            className="formField"
-                            id="email"
-                            name="email"
-                            placeholder=""
-                            type="email"
-                        />
-                        {
-                            errors.email && touched.email 
-                            ? (<div className="error">{errors.email}</div>) 
-                            : null
-                        }
-                    </div>
+                            <div className="FormContent">
+                                <label id="FormLabel" htmlFor="email">Email<span>*</span></label>
+                                <Field
+                                    className="FormField"
+                                    id="email"
+                                    name="email"
+                                    placeholder=""
+                                    type="email"
+                                />
+                                {
+                                    errors.email && touched.email 
+                                    ? (<div className="error">{errors.email}</div>) 
+                                    : null
+                                }
+                            </div>
                     </div>
                     
                     
                    
-                   <div className="formDisplay">
-                   <div className="formContet">
-                        <label id="formLabel" htmlFor="mobile">Telefone celular <span>*</span></label>
+                   <div className="FormDisplay">
+                   <div className="FormContent">
+                        <label id="FormLabel" htmlFor="mobile">Telefone celular <span>*</span></label>
                         <Field
-                            className="formField"
+                            className="FormField"
                             id="mobile"
                             name="mobile"
                             placeholder=""
@@ -105,10 +106,10 @@ const FormClient = () => {
                             : null
                         } */}
                     </div>
-                    <div className="formContet">
-                        <label id="formLabel" htmlFor="phone">Telefone fixo <span>*</span></label>
+                    <div className="FormContent">
+                        <label id="FormLabel" htmlFor="phone">Telefone fixo <span>*</span></label>
                         <Field
-                        className="formField"
+                        className="FormField"
                             id="phone"
                             name="phone"
                             placeholder=""
@@ -122,10 +123,10 @@ const FormClient = () => {
                     </div>
 
                    </div>
-                   <div className="formContet">
-                        <label id="formLabel" htmlFor="mobile">Rua/Logradouro<span>*</span></label>
+                   <div className="FormContent">
+                        <label id="FormLabel" htmlFor="mobile">Rua/Logradouro<span>*</span></label>
                         <Field
-                            className="formField"
+                            className="FormField FormName"
                             id="logragrouro"
                             name="mobile"
                             placeholder=""
@@ -138,11 +139,11 @@ const FormClient = () => {
                         } */}
                     </div>
 
-                    <div className="formDisplay">
+                    <div className="FormDisplay">
                     
-                    <div className="formContet">
-                        <label id="formLabel" htmlFor="Cep">CEP<span>*</span></label>
-                        <Field className="formField"
+                    <div className="FormContent">
+                        <label id="FormLabel" htmlFor="Cep">CEP<span>*</span></label>
+                        <Field className="FormField"
                             id="cep"
                             name="cep"
                             placeholder=""
@@ -155,9 +156,9 @@ const FormClient = () => {
                         } */}
                     </div>
                     
-                    <div className="formContet">
-                        <label id="formLabel" htmlFor="complemento">Complemento</label>
-                        <Field className="formField"
+                    <div className="FormContent">
+                        <label id="FormLabel" htmlFor="complemento">Complemento</label>
+                        <Field className="FormField"
                             id="complemento"
                             name="complemento"
                             placeholder=""
@@ -172,54 +173,52 @@ const FormClient = () => {
                         
                     </div>
 
-                    <div className="formDisplay2">
-                    <div className="formContet">
-                        <label id="formLabel" htmlFor="cidade">Cidade<span>*</span></label>
-                        <Field className="formField"
-                            id="cidade"
-                            name="cidade"
-                            placeholder=""
-                            type="text"
-                        />
-                        {/* {
-                            errors.cidade && touched.cidade 
-                            ? (<div className="error">{errors.cidade}</div>) 
-                            : null
-                        } */}
-                    </div>
+                    <div className="FormDisplay2">
+                        <div className="FormContent">
+                            <label id="FormLabel" htmlFor="cidade">Cidade<span>*</span></label>
+                            <Field className="FormField"
+                                id="cidade"
+                                name="cidade"
+                                placeholder=""
+                                type="text"
+                            />
+                            {/* {
+                                errors.cidade && touched.cidade 
+                                ? (<div className="error">{errors.cidade}</div>) 
+                                : null
+                            } */}
+                        </div>
 
-                    <div className="formContet uf">
-                        <label id="formLabel" htmlFor="uf">UF<span>*</span></label>
-                        <Field className="formField1"
-                            id="uf"
-                            name="uf"
-                            placeholder=""
-                            type="text"
-                        />
-                        {/* {
-                            errors.uf && touched.uf 
-                            ? (<div className="error">{errors.uf}</div>) 
-                            : null
-                        } */}
-                    </div>
+                        <div className="FormContent Uf">
+                            <label id="FormLabel" htmlFor="uf">UF<span>*</span></label>
+                            <Field className="FormField1"
+                                id="uf"
+                                name="uf"
+                                placeholder=""
+                                type="text"
+                            />
+                            {/* {
+                                errors.uf && touched.uf 
+                                ? (<div className="error">{errors.uf}</div>) 
+                                : null
+                            } */}
+                        </div>
+                        
+                        <div className="FormContent Pais">
+                            <label id="FormLabel" htmlFor="pais">País<span>*</span></label>
+                            <Field className="FormField2"
+                                id="pais"
+                                name="pais"
+                                placeholder=""
+                                type="text"
+                            />
+                            {/* {
+                                errors.país && touched.país 
+                                ? (<div className="error">{errors.país}</div>) 
+                                : null
+                            } */}
+                        </div>
                     
-                    <div className="formContet">
-                        <label id="formLabel" htmlFor="pais">País<span>*</span></label>
-                        <Field className="formField2"
-                            id="pais"
-                            name="pais"
-                            placeholder=""
-                            type="text"
-                        />
-                        {/* {
-                            errors.país && touched.país 
-                            ? (<div className="error">{errors.país}</div>) 
-                            : null
-                        } */}
-                    </div>
-                  
-
-
                     </div>
                    
                     <div className="buttonSubimit">
