@@ -8,19 +8,21 @@
   background: rgba(255, 255, 255, 0.34);
   border-radius: 25px;
   margin-left: 650px;
-  padding: 4rem;
+  padding-left: 3rem;
+  padding-bottom: 2rem;
   border-radius: 25px;
    
 }
 
 .FormContainer{
   display: flex;
+  margin: 100px auto;
 }
 
 .Logo{
   width: 308px;
   height: 61px;
-  margin-bottom: 50px;
+  margin: 50px;
 }
 
 span{
@@ -44,7 +46,7 @@ span{
  }
 
 .FormName{
-  width: 1150px;
+  width: 1153px;
  
 }
 

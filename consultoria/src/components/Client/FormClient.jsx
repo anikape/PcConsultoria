@@ -1,10 +1,14 @@
-import React from "react";
+import React, {onBlur, useState, useRef} from "react";
 import {Formik, Form, Field} from "formik"
+import axios from 'axios';
 import * as Yup from 'yup';
 import './formCliente.scss'
 
 
-const FormClient = () => {
+
+
+export const FormClient = () => {
+    
 
    const initialValues={
         name: '',
@@ -34,6 +38,41 @@ const FormClient = () => {
         console.log(values)
       }
 
+      /*CEP*/
+      
+      const findCEP = (ev, setFieldValue)=>{
+        const cep = ev.target.value;
+
+        const newCep = cep?.replace(/[^0-9]/g, '')
+        console.log(newCep)
+
+
+
+        fetch(`https://viacep.com.br/ws/${newCep}/json/`)
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error('Erro na resposta da API');
+          }
+          return res.json();
+        })
+        .then((data) => {
+            console.log(data)
+            setFieldValue('rua', data.logradouro)
+            setFieldValue('bairro', data.bairro)
+            setFieldValue('cidade', data.localidade)
+            setFieldValue('uf', data.uf)         
+            
+            
+          // faça algo com a variável data aqui
+        })
+        .catch((error) => {
+          console.log(error);
+          // trate o erro aqui
+        });
+    }
+
+     
+
     return(
         
 
@@ -46,7 +85,7 @@ const FormClient = () => {
                 validationSchema= {validationSchema}
                 onSubmit= {(values) => handleSubmit(values)}
             >
-                {({ errors, touched }) => (
+                {({ errors, touched, setFieldValue }) => (
                 <Form id="FormContainer">
 
                     <div className="FormContent">
@@ -127,7 +166,7 @@ const FormClient = () => {
                         <label id="FormLabel" htmlFor="mobile">Rua/Logradouro<span>*</span></label>
                         <Field
                             className="FormField FormName"
-                            id="logragrouro"
+                            id="rua"
                             name="mobile"
                             placeholder=""
                             type="adress"
@@ -148,6 +187,9 @@ const FormClient = () => {
                             name="cep"
                             placeholder=""
                             type="number"
+                            onBlur={(ev)=> findCEP(ev, setFieldValue)}
+                            
+
                         />
                         {/* {
                             errors.mobile && touched.mobile 
@@ -177,7 +219,7 @@ const FormClient = () => {
                         <div className="FormContent">
                             <label id="FormLabel" htmlFor="cidade">Cidade<span>*</span></label>
                             <Field className="FormField"
-                                id="cidade"
+                                id="localidade"
                                 name="cidade"
                                 placeholder=""
                                 type="text"
@@ -196,6 +238,7 @@ const FormClient = () => {
                                 name="uf"
                                 placeholder=""
                                 type="text"
+                                
                             />
                             {/* {
                                 errors.uf && touched.uf 
@@ -232,5 +275,6 @@ const FormClient = () => {
         
     )
 }
+
 
 export default FormClient
